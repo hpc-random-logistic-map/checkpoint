@@ -126,30 +126,29 @@ As the map has an element of randomness to it, many
 simulations (a large $\bar{N}$) would be required for statistical analysis. This project is a subset of a larger work in progress
 and requires optimization. A serial implementation has been developed
 in MATLAB. The parallel implementation will be in C++.
+
+\section{Project Breakdown}
+Each of us is converting a piece of the serial Matlab code to C++.
+\begin {table}[H]
+    \begin{tabular}{ |p{1cm}|p{10cm}|}
+    \hline
+    Amy &  make a random number distribution and use the cobweb
+    routine to return a list of subsequent iterations\\ \hline
+    Long & calculate period order, given a list of subsequent iterations  \\ \hline
+    Kristi & calculate the average number of period $p$ orbits, given
+    a list of period locations, period orders, and starting positions\\ \hline
+    Emily  & create the HDF5 file hierarchy to organize the simulation
+    data\\ \hline
+    \end{tabular}
+\end{table}
+
 \section{Description and Background}
-\subsection{Deterministic Logistic Map}
-The Logistic map is a popularly studied topic in nonlinear
-dynamics. The Logistic function is described as follows:
-\begin{equation}\label{orig}
-\hat{f}(x) = rx(1-x)
-\end{equation}
-where $r$ is a parameter that takes on values in [0,4]. To get the
-Logistic Map, one simply discretizes the function by replacing
-$\hat{f}(x)$ with $x_{n+1}$ and $x$ with $x_n$:
-\begin{equation*}
-x_{n+1}=rx_n(1-x_n)
-\end{equation*}
 % \begin{figure}[H]
 % 	\begin{center}
 % 		\includegraphics[scale=0.7]{deterministic}
 % \caption{The deterministic Logistic Map.}
 % 	\end{center}
 % \end{figure}
-
-Fixed points are located where the line $y=x$ intersects with the
-Logistic Map. As the parameter $r$ is increased or decreased over the
-interval [0,4], the map undergoes period doubling. Around $r=3.6$, the
-map begins to display chaotic behavior.
 
 \subsection{Random Logistic Map}
 The Random Logistic function is a special case of the Logistic
@@ -185,27 +184,6 @@ MATLAB. Our project would consist of converting the existing code to
 C++ and implementing parallelization through MPI with proper load balancing. Other possible improvements include
 IO optimization and memory optimization (possible improvements through
 HDF5). 
-
-\subsection{Application to engineering}
-This project has potential applications to civil engineering in terms
-of treating contaminated groundwater \cite{neupauer}. Essentially, the
-distribution of rocks underground can be viewed as a random field
-distributed spatially, through which treatment solution must mix with
-contaminated groundwater. Understanding the problem of spatial
-randomness in one dimension can be generalized to two dimensions, with
-the end goal of successfully simulating chaotic advection and reaction in two dimensions. 
-
-\section{Analysis}
-The analysis of our simulation will encompass the following:
-\be
-\item Compare the MFLOP/s (using profiling from psrun) for a variable number of simulation
-sizes. 
-\item Measure the speedup after implementing MPI. 
-\item Analyze the Karp-Flatt Metric to see how the code
-  performs in parallel. 
-\item Compare the performance of our simulation in terms of GFLOP/s to
-  the bite:flop ratio in the Roofline plot
-\ee
 
 \subsection{Testing}
 Even though the nature of this project is random, it is possible to

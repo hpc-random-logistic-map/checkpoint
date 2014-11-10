@@ -7,7 +7,6 @@
      "thm"
      "example")
     (LaTeX-add-labels
-     "orig"
      "randmap")
     (TeX-add-symbols
      "be"
