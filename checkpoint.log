@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.16)  10 NOV 2014 21:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.16)  10 NOV 2014 21:45
 entering extended mode
 **checkpoint
 (c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.tex
@@ -466,14 +466,14 @@ Overfull \hbox (2.06223pt too wide) in paragraph at lines 181--181
 []|\OT1/cmr/m/n/12 Emily| 
  []
 
-[3] (c:\Users\amy\Documents\hpc\Project\checkpoint\rand_ex.m)
-(c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.bbl) [4]
+[3] (c:\Users\amy\Documents\hpc\Project\checkpoint\rand_ex.m) [4]
+(c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.bbl) [5]
 (c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.aux) ) 
 Here is how much of TeX's memory you used:
- 5863 strings out of 493706
- 84997 string characters out of 3144589
+ 5864 strings out of 493706
+ 85015 string characters out of 3144589
  224294 words of memory out of 3000000
- 9096 multiletter control sequences out of 15000+200000
+ 9097 multiletter control sequences out of 15000+200000
  13762 words of font info for 54 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  44i,16n,42p,262b,1046s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -491,9 +491,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfrm1200.pfb>
-Output written on checkpoint.pdf (4 pages, 153566 bytes).
+Output written on checkpoint.pdf (5 pages, 154727 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

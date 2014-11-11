@@ -175,7 +175,7 @@ ourselves.
     Amy &  Converted Matlab code that computes the random function and
     does the fixed point iteration to C++. In the process of debugging
     the fixed point iteration; it currently does not converge. \\ \hline
-    Long & \\ \hline
+    Long & Conversion of the Matlab code to C++ underway\\ \hline
     Kristi & Began converting the Matlab code to C++. Experienced
     growing pains with learning how to read Matlab syntax.\\ \hline
     Emily  & Decided on an HDF5 hierarchy to use. In the process of
@@ -226,6 +226,25 @@ implementation with the use of \texttt{rand} and \texttt{srand}.
 \lstinputlisting{rand_ex.m}
 \ei
 \subsection{Long}
+I am responsible for converting the prob\_of\_orbits.m file into a C plus plus file. There is a breakdown of three steps process should be done in order for this to work.
+
+Step 1: convert the file into cpp file. This is already done. Basic testing should be done.
+
+Step 2: Synchronizing the code with other part of the other. This step cannot be proceeded until the 
+
+code for orbits and cobweb are done because my function is depend on the two files. 
+
+Testing functionality of the code.
+
+Step 3: Parallelizing the code. 
+
+Optimizing and benchmarking. 
+
+Step 4: Using the Work balancer.
+
+Step 1 should be done by the night.
+
+Step 2, 3 and 4 will be our next steps to move to finish the project.
 \subsection{Emily}
 A structure for the file has been devised:
 \begin{tabbing}
