@@ -177,7 +177,8 @@ ourselves.
     the fixed point iteration; it currently does not converge. \\ \hline
     Long & \\ \hline
     Kristi & \\ \hline
-    Emily  & \\ \hline
+    Emily  & Decided on an HDF5 hierarchy to use. In the process of
+    implementing it and modifying code to be HDF5-compatible\\ \hline
     \end{tabular}
 \end{table}
 
@@ -226,6 +227,19 @@ implementation with the use of \texttt{rand} and \texttt{srand}.
 \subsection{Long}
 \subsection{Kristi}
 \subsection{Emily}
+A structure for the file has been devised:
+\begin{tabbing}
+	\hspace{5mm} group ``$x_{0}$'' \\
+		\hspace{10mm} group ``$r$'' \\
+			\hspace{15mm} attribute ``$l=0.1$'' \\
+				\hspace{20mm} dataset \\
+					\hspace{25mm} $(1) \hspace{10mm} (x_{11})$ \\
+					\hspace{25mm} $(2) \hspace{10mm} (x_{21})(x_{22})$ \\
+					\hspace{25mm} $(3) \hspace{10mm} (x_{31})(x_{32})(x_(33)))$ \\
+					\hspace{25mm} ... \\
+					\hspace{25mm} (order) ($x$ location) \\	
+\end{tabbing}
+The structure will be implemented over the next week. From there, HDF5 compatibility will be implemented in code where relevant.
 
 
 \bibliographystyle{plain}
