@@ -6,10 +6,10 @@ Jeroen~S.W. Lamb, Martin Rasmussen, and Christian~S. Rodrigues.
   dynamical systems.
 \newblock {\em Proceedings of the American Mathematical Society}, 2013.
 
-\bibitem{neupauer}
-Roseanna~M. Neupauer, James~D. Meiss, and David~C. Mays.
-\newblock Chaotic advection and reaction during engineered injection and
-  extraction in heterogeneous porous media.
-\newblock {\em Water Resources Research}, Volume 50, 2014.
+\bibitem{dlb}
+Marc~H. Willibeek-LeMair and Anthony~P. Reeves.
+\newblock Strategies for dynamic load balancing on highly parallel computers.
+\newblock {\em IEEE Transactions on Parallel and Distributed Computing}, 4(4),
+  September 1993.
 
 \end{thebibliography}

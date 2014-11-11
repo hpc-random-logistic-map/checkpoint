@@ -89,7 +89,7 @@
 \author{Amy Le (5576)\\Long Tat (4576)\\Emily Bertelson (4576)\\Kristina Entzel (4576)}
 \maketitle
 
-\section{Introduction}
+\section{Review of Project Goals}
 The purpose of this project is to characterize the Random Logistic
 Map. In particular, we will be studying the stability of the map,
 which includes locating fixed points and generating bifurcation
@@ -100,22 +100,24 @@ diagrams. The two main goals are:
 \be
 \item For an initial starting value $x_0 \in [0,1]$ and a specific
   random function $R_0(x)$, iterate until you
-  find the fixed point(s), $x_i^*$ associated with $R_0(x)$. We may implement a numerical
-  scheme to find this fixed point quickly (e.g. Steffensen's Algorithm or
-  Aitken's $\Delta^2$ Method. Both give quadratic convergence).
+  find the fixed point(s), $x_i^*$ associated with $R_0(x)$. 
 \item Classify the fixed points in terms of a period $p$ orbit. 
 \item Each processor should take a different initial $x_0$ and report
   whether the initial condition led to finding a unique stable orbit
   (many initial conditions may converge to the same orbit or different
-  orbits, while others may never converge). The processors should be
-  properly load balanced.
+  orbits, while others may never converge). 
+\bi
+\item The processors should be properly load balanced.
+\item As each processor finishes its work, it will write its results
+  to an HDF5 file (parallel i/o)
 \item Repeat the above steps for a large number of different random
   maps $R_i(x)$, $i = 0, 1, 2,... \bar{N}$ in order to find the expected
   number of order $p$ periodic orbits for the random map.
 \ee
 \item Create a set valued bifurcation diagram \cite{lamb}
 \be
-\item For many values of $r \in [0,4]$, and a fixed random function
+\item For many values of $r \in [0,4]
+$, and a fixed random function
   $R_0(x)$, plot the locations of the periodic orbits as a function of
   $r$. A period $p$ orbit will have $p$ corresponding $x$ values as
   its orbit locations (e.g. a period 1 orbit will have 1 fixed point,
@@ -128,19 +130,57 @@ and requires optimization. A serial implementation has been developed
 in MATLAB. The parallel implementation will be in C++.
 
 \section{Project Breakdown}
-Each of us is converting a piece of the serial Matlab code to C++.
+The general progression of the project is outlined below:
+\be
+\item Convert the Matlab code to C++ (object oriented)
+\item Confirm the C++ versions of the code that we each produce work
+  together correctly
+\item Parallelize the C++ code
+\bi
+\item Use MPI to parallelize the mathematical computation
+\item Invoke the load balancer to assign an initial condition to each
+  fixed point iteration \cite{dlb}
+\ei
+\item Benchmark 
+\bi
+\item strong scaling study (speedup and efficiency)
+\item weak scaling study (speedup and efficiency)
+\ei
+\ee
+
+\noindent The table below summarizes how we have subdivided the project among
+ourselves. 
 \begin {table}[H]
-    \begin{tabular}{ |p{1cm}|p{10cm}|}
+\centering
+\caption{Division of Labor}
+    \begin{tabular}{ |p{1cm}|p{10cm}|} 
     \hline
     Amy &  make a random number distribution and use the cobweb
-    routine to return a list of subsequent iterations\\ \hline
+    diagram (fixed point) routine to return a list of subsequent iterations\\ \hline
     Long & calculate period order, given a list of subsequent iterations  \\ \hline
     Kristi & calculate the average number of period $p$ orbits, given
     a list of period locations, period orders, and starting positions\\ \hline
     Emily  & create the HDF5 file hierarchy to organize the simulation
-    data\\ \hline
+    data; use links in the file to generate views of the data for easy
+    plotting\\ \hline
     \end{tabular}
 \end{table}
+
+\noindent The table below summarizes how we have each progressed:
+\begin {table}[H]
+\centering
+\caption{Progress}
+    \begin{tabular}{ |p{1cm}|p{10cm}|} 
+    \hline
+    Amy &  Converted Matlab code that computes the random function and
+    does the fixed point iteration to C++. In the process of debugging
+    the fixed point iteration; it currently does not converge. \\ \hline
+    Long & \\ \hline
+    Kristi & \\ \hline
+    Emily  & \\ \hline
+    \end{tabular}
+\end{table}
+
 
 \section{Description and Background}
 % \begin{figure}[H]
@@ -154,7 +194,7 @@ Each of us is converting a piece of the serial Matlab code to C++.
 The Random Logistic function is a special case of the Logistic
 function, which is not as popularly studied. In the random case, $r$ becomes a value dependent on $x$. Essentially, the Random Logistic
 Map introduces the notion of spatial randomness to the deterministic
-function (\ref{orig}). The Random Logistic function and map are as follows:
+function. The Random Logistic function and map are as follows:
 \begin{equation*}
 f(x) = R(x)x(1-x)
 \end{equation*}
