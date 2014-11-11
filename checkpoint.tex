@@ -88,7 +88,6 @@
 \date{November 10, 2014}
 \author{Amy Le (5576)\\Long Tat (4576)\\Emily Bertelson (4576)\\Kristina Entzel (4576)}
 \maketitle
-
 \section{Review of Project Goals}
 The purpose of this project is to characterize the Random Logistic
 Map. In particular, we will be studying the stability of the map,
@@ -103,13 +102,12 @@ diagrams. The two main goals are:
   find the fixed point(s), $x_i^*$ associated with $R_0(x)$. 
 \item Classify the fixed points in terms of a period $p$ orbit. 
 \item Each processor should take a different initial $x_0$ and report
-  whether the initial condition led to finding a unique stable orbit
-  (many initial conditions may converge to the same orbit or different
-  orbits, while others may never converge). 
+  whether the initial condition led to finding a unique stable orbit  
 \bi
 \item The processors should be properly load balanced.
 \item As each processor finishes its work, it will write its results
   to an HDF5 file (parallel i/o)
+\ei
 \item Repeat the above steps for a large number of different random
   maps $R_i(x)$, $i = 0, 1, 2,... \bar{N}$ in order to find the expected
   number of order $p$ periodic orbits for the random map.
@@ -122,6 +120,9 @@ $, and a fixed random function
   $r$. A period $p$ orbit will have $p$ corresponding $x$ values as
   its orbit locations (e.g. a period 1 orbit will have 1 fixed point,
   a period 2 orbit will have 2 fixed points, and so on). 
+\bi
+\item Read data from HDF5 file
+\ei
 \ee
 \ee
 As the map has an element of randomness to it, many
@@ -147,7 +148,6 @@ The general progression of the project is outlined below:
 \item weak scaling study (speedup and efficiency)
 \ei
 \ee
-
 \noindent The table below summarizes how we have subdivided the project among
 ourselves. 
 \begin {table}[H]
@@ -165,7 +165,7 @@ ourselves.
     plotting\\ \hline
     \end{tabular}
 \end{table}
-
+\newpage
 \noindent The table below summarizes how we have each progressed:
 \begin {table}[H]
 \centering
@@ -181,29 +181,22 @@ ourselves.
     \end{tabular}
 \end{table}
 
+Details of each of person's progress is enumerated in the Appendix.
 
-\section{Description and Background}
 % \begin{figure}[H]
 % 	\begin{center}
 % 		\includegraphics[scale=0.7]{deterministic}
 % \caption{The deterministic Logistic Map.}
 % 	\end{center}
 % \end{figure}
-
-\subsection{Random Logistic Map}
-The Random Logistic function is a special case of the Logistic
-function, which is not as popularly studied. In the random case, $r$ becomes a value dependent on $x$. Essentially, the Random Logistic
-Map introduces the notion of spatial randomness to the deterministic
-function. The Random Logistic function and map are as follows:
-\begin{equation*}
-f(x) = R(x)x(1-x)
-\end{equation*}
+\section{Appendix}
+\subsection{Amy}
+The following equation is the fixed point iteration that the code
+completes, where $R(x)$ is calculated by manipulating a random number generator.
 \begin{equation}\label{randmap}
 x_{n+1} = R(x_n)x_n(1-x_n)
 \end{equation}
-$R(x)$ consists of a Fourier series whose coefficients are independent
-(but not identical) random variables drawn from a uniform
-distribution whose bounds depend on the Fourier mode. 
+The exact details of how to calculate $R(x)$ are outlined below.
 \begin{align*}
 \begin{split}
 \ln(R(x)) &= \xi(x)\\
@@ -216,21 +209,23 @@ S_n &= \alpha e^{-L|n|}\\
 \end{split}
 \end{align*}
 Where $L \in (0,1)$ represents the correlation length (and is fixed
-for each simulation) and $r \in [0,4]$ is also fixed for each simulation.
-
-An initial serial implementation has been developed for this project
-and has been mildly tested in
-MATLAB. Our project would consist of converting the existing code to
-C++ and implementing parallelization through MPI with proper load balancing. Other possible improvements include
-IO optimization and memory optimization (possible improvements through
-HDF5). 
-
-\subsection{Testing}
-Even though the nature of this project is random, it is possible to
-compare the output of the parallel implementation to the serial
-implementation for accuracy. The randomness lies in the function
-$R(x)$, so using the same values of $R(x)$ for the serial and parallel
-code should output the same results.
+for each simulation) and $r \in [0,4]$ is also fixed for each
+simulation. Optimizations implemented in the code conversion:
+\bi
+\item Preferential use of the  multiply and add operators where possible, since
+they less expensive than subtract and divide operators
+\item I used a reduction on the loop that computes the Fourier Series
+  in order to take advantage of the data parallelism with SIMD
+\item Loop structure was reorganized to take advantage of C++ being row-oriented
+\item I used inlining in the C++ code to reduce the number of function calls
+\item The lack of a built in uniform random number generator that generates a random
+double between two doubles made me create a psudeo random number
+implementation with the use of \texttt{rand} and \texttt{srand}.
+\lstinputlisting{rand_ex.m}
+\ei
+\subsection{Long}
+\subsection{Kristi}
+\subsection{Emily}
 
 
 \bibliographystyle{plain}

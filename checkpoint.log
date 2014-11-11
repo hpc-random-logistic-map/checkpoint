@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.16)  10 NOV 2014 20:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.16)  10 NOV 2014 21:06
 entering extended mode
 **checkpoint
 (c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.tex
@@ -444,33 +444,56 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
 
-! LaTeX Error: \begin{itemize} on input line 109 ended by \end{enumerate}.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (0.98306pt too wide) in paragraph at lines 161--161
+[]|\OT1/cmr/m/n/12 Kristi| 
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 \ee
-         
-? 
-! Emergency stop.
- ...                                              
-                                                  
-l.116 \ee
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
- 
+Overfull \hbox (2.06223pt too wide) in paragraph at lines 163--163
+[]|\OT1/cmr/m/n/12 Emily| 
+ []
+
+[2]
+Overfull \hbox (0.98306pt too wide) in paragraph at lines 179--179
+[]|\OT1/cmr/m/n/12 Kristi| 
+ []
+
+
+Overfull \hbox (2.06223pt too wide) in paragraph at lines 180--180
+[]|\OT1/cmr/m/n/12 Emily| 
+ []
+
+[3] (c:\Users\amy\Documents\hpc\Project\checkpoint\rand_ex.m)
+(c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.bbl) [4]
+(c:\Users\amy\Documents\hpc\Project\checkpoint\checkpoint.aux) ) 
 Here is how much of TeX's memory you used:
- 5795 strings out of 493706
- 84173 string characters out of 3144589
- 186294 words of memory out of 3000000
- 9043 multiletter control sequences out of 15000+200000
- 12126 words of font info for 47 fonts, out of 3000000 for 9000
+ 5864 strings out of 493706
+ 85007 string characters out of 3144589
+ 222294 words of memory out of 3000000
+ 9097 multiletter control sequences out of 15000+200000
+ 13762 words of font info for 54 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 44i,6n,42p,262b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 44i,16n,42p,262b,1046s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/cm-super/sfrm1200.pfb>
+Output written on checkpoint.pdf (4 pages, 152606 bytes).
+PDF statistics:
+ 68 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
